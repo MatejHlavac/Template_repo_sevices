@@ -1,7 +1,10 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
+
+  css: ['~/assets/css/main.css'],
 
   modules: [
     '@nuxt/image',
@@ -9,7 +12,7 @@ export default defineNuxtConfig({
     '@nuxtjs/robots',
     'nuxt-schema-org',
     '@nuxt/icon',
-    '@nuxtjs/google-fonts',
+    // '@nuxtjs/google-fonts', // Dočasne vypnuté - môže spôsobovať useHead() chybu
     '@vueuse/nuxt'
   ]
 })
