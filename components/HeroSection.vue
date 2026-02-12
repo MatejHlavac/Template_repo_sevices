@@ -1,16 +1,17 @@
 <template>
     <section id="hero">
+        <div class="hero-image">
+            <NuxtImg
+                src="/images/hero_image.webp"
+                alt="Ukážka profesionálnej práce"
+                width="2120"
+                height="1192"
+                loading="eager"
+                format="webp"
+            />
+        </div>
+        <div class="hero-overlay"></div>
         <div class="container">
-            <div class="hero-image">
-                <NuxtImg
-                    src="/images/hero_image.webp"
-                    alt="Ukážka profesionálnej práce"
-                    width="1400"
-                    height="933"
-                    loading="eager"
-                    format="webp"
-                />
-            </div>
             <div class="hero-texts">
                 <div class="rating">
                     <div class="stars">
@@ -43,39 +44,60 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #f9fafb;
-}
-
-.container {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
     position: relative;
-}
-
-.hero-texts {
-    position: relative;
-    z-index: 1;
-    max-width: 600px;
+    overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero-image {
     position: absolute;
-    right: -40px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50%;
-    max-width: 600px;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
     z-index: 0;
 }
 
 .hero-image img {
     width: 100%;
-    height: auto;
-    border-radius: 8px 8px 20px 20px;
+    height: 100%;
     object-fit: cover;
-    box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 80px);
+    background: transparent;
+    z-index: 1;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto 0 40px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.hero-texts {
+    position: relative;
+    z-index: 3;
+    max-width: 700px;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 40px;
+    border-radius: 16px;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    margin-top: -60px;
 }
 
 .rating {
@@ -83,12 +105,12 @@
     align-items: center;
     gap: 12px;
     margin-bottom: 20px;
-    background-color: rgba(59, 130, 246, 0.05);
+    background-color: rgba(0, 80, 157, 0.05);
     padding: 8px 14px;
     border-radius: 20px;
     width: fit-content;
-    border: 1px solid rgba(59, 130, 246, 0.15);
-    box-shadow: 0 0 4px rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(0, 80, 157, 0.15);
+    box-shadow: 0 0 4px rgba(0, 80, 157, 0.08);
 }
 
 .stars {
@@ -97,7 +119,7 @@
 }
 
 .star {
-    color: #3b82f6;
+    color: #00509d;
     font-size: 0.9rem;
     line-height: 1;
 }
@@ -133,7 +155,7 @@
 .hero-texts h1 .title-line.underlined {
     position: relative;
     display: inline-block;
-    background-color: #f9fafb;
+    background-color: transparent;
     padding: 0 8px;
     z-index: 1;
 }
@@ -145,7 +167,7 @@
     left: 0;
     width: 100%;
     height: 12px;
-    background: rgba(59, 130, 246, 0.4);
+    background: rgba(0, 80, 157, 0.4);
     border-radius: 6px;
     transform: rotate(-1deg);
     transform-origin: left center;
@@ -175,11 +197,11 @@
     width: 18px;
     height: 18px;
     border-radius: 50%;
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: rgba(0, 80, 157, 0.1);
     margin-right: 12px;
     flex-shrink: 0;
     position: relative;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter' d='M2 6 L5 9 L10 2'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%2300509d' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter' d='M2 6 L5 9 L10 2'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: center;
     background-size: 9px 9px;
@@ -202,41 +224,58 @@
 }
 
 .hero-texts a.kontakt {
-    background-color: #3b82f6;
+    background-color: #00509d;
     color: white;
-    border: 2px solid #3b82f6;
+    border: 2px solid #00509d;
     border-radius: 30px;
     font-weight: 700;
 }
 
 .hero-texts a.kontakt:hover {
-    background-color: #2563eb;
-    border-color: #2563eb;
+    background-color: #003d7a;
+    border-color: #003d7a;
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 80, 157, 0.3);
 }
 
 .hero-texts a.služby {
     background-color: transparent;
-    color: #3b82f6;
-    border: 2px solid #3b82f6;
+    color: #00509d;
+    border: 2px solid #00509d;
     border-radius: 30px;
 }
 
 .hero-texts a.služby:hover {
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: rgba(0, 80, 157, 0.1);
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 80, 157, 0.2);
 }
 
 
 /* Responsive */
 @media (max-width: 768px) {
     #hero {
-        min-height: auto;
-        padding: 40px 0;
+        min-height: 100vh;
     }
 
+    .container {
+        min-height: 100vh;
+        padding: 80px 20px 40px;
+    }
+
+    .hero-texts {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(249, 250, 251, 0.9) 0%,
+            rgba(249, 250, 251, 0.7) 50%,
+            rgba(249, 250, 251, 0.5) 100%
+        );
+    }
 
     .hero-texts h1 {
         font-size: 2rem;
