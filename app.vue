@@ -1,11 +1,9 @@
 <script setup>
-// Workaround pre Vue DevTools extension bug
 if (import.meta.client) {
   window.__VUE_DEVTOOLS_GLOBAL_HOOK__ = window.__VUE_DEVTOOLS_GLOBAL_HOOK__ || {}
   window.__VUE_DEVTOOLS_GLOBAL_HOOK__.on = () => {}
 }
 
-// Pridanie Google Fonts - DM Sans
 useHead({
   link: [
     {

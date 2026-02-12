@@ -12,6 +12,16 @@
                 />
             </div>
             <div class="hero-texts">
+                <div class="rating">
+                    <div class="stars">
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                        <span class="star">★</span>
+                    </div>
+                    <span class="rating-text"><strong>5.0</strong> od <strong>100+</strong> spokojných zákazníkov</span>
+                </div>
                 <h1>
                     <span class="title-line underlined">Profesionálne služby,</span>
                     <span class="title-line">na ktoré sa môžete spoľahnúť</span>
@@ -21,8 +31,8 @@
                     <li>Kvalitne</li>
                     <li>Spoľahlivo</li>
                 </ul>
-                <a class="kontakt" href="#contact">Kontaktovať</a>
-                <a class="služby" href="#services">Zistiť viac</a>
+                <a class="kontakt" href="#contact">Kontaktovať nás</a>
+                <a class="služby" href="#services">Naše služby</a>
             </div>
         </div>
     </section>
@@ -66,6 +76,40 @@
     border-radius: 8px 8px 20px 20px;
     object-fit: cover;
     box-shadow: 8px 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    background-color: rgba(59, 130, 246, 0.05);
+    padding: 8px 14px;
+    border-radius: 20px;
+    width: fit-content;
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    box-shadow: 0 0 4px rgba(59, 130, 246, 0.08);
+}
+
+.stars {
+    display: flex;
+    gap: 2px;
+}
+
+.star {
+    color: #3b82f6;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.rating-text {
+    font-size: 1rem;
+    color: #4b5563;
+}
+
+.rating-text strong {
+    font-weight: 700;
+    color: #1f2937;
 }
 
 .hero-texts h1 {
@@ -118,14 +162,27 @@
     padding: 8px 0;
     font-size: 1.1rem;
     color: #4b5563;
+    display: flex;
+    align-items: center;
+    position: relative;
 }
 
 .hero-texts ul li::before {
-    content: "→ ";
-    color: #3b82f6;
-    font-weight: bold;
-    margin-right: 10px;
-    font-size: 1.2rem;
+    content: "";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: rgba(59, 130, 246, 0.1);
+    margin-right: 12px;
+    flex-shrink: 0;
+    position: relative;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9' viewBox='0 0 12 12'%3E%3Cpath fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='square' stroke-linejoin='miter' d='M2 6 L5 9 L10 2'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 9px 9px;
 }
 
 .hero-texts a {
