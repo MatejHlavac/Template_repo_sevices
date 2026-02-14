@@ -23,6 +23,7 @@ export default {
             />
         </div>
         <div class="hero-overlay"></div>
+        <div class="hero-bottom-fade"></div>
         <div class="container">
             <div class="hero-texts">
                 <div class="rating">
@@ -57,6 +58,8 @@ export default {
     position: relative;
     overflow: hidden;
     padding-top: 80px;
+    padding-bottom: 4rem;
+    background-color: #fff;
 }
 
 .hero-image {
@@ -81,6 +84,17 @@ export default {
     width: 100%;
     height: calc(100% - 80px);
     background: transparent;
+    z-index: 1;
+}
+
+.hero-bottom-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 12rem;
+    background: linear-gradient(to bottom, transparent, #fff);
+    pointer-events: none;
     z-index: 1;
 }
 

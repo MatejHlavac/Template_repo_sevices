@@ -17,7 +17,14 @@ export default {
 
 <template>
     <button type="button" @click="handleClick" class="service-button">
-        <span class="service-button-label">{{ service.nazov }}</span>
+        <NuxtImg
+            v-if="service.iconImage"
+            :src="service.iconImage"
+            :alt="service.iconAlt || service.nazov"
+            width="48"
+            height="48"
+            class="service-button-icon"
+        />
     </button>
 </template>
 
@@ -25,24 +32,30 @@ export default {
 .service-button {
     display: block;
     width: 100%;
-    padding: 1rem;
+    height: 100%;
+    padding: 0;
     border: 2px solid #00509d;
     border-radius: 8px;
-    background: #fff;
-    color: #00509d;
-    font-size: 1rem;
-    font-weight: 600;
+    background: transparent;
     cursor: pointer;
-    transition: background 0.2s, color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    overflow: hidden;
 }
 
 .service-button:hover {
-    background: #00509d;
-    color: #fff;
+    border-color: #003d7a;
+    box-shadow: 0 0 0 1px #00509d;
 }
 
-.service-button-label {
+.service-button-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     display: block;
-    text-align: center;
+    transform: scale(1.35);
+}
+
+.service-button:hover .service-button-icon {
+    filter: brightness(0.9);
 }
 </style>
