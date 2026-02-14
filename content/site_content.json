@@ -25,5 +25,35 @@
       "contact": "Kontaktovať nás",
       "services": "Naše služby"
     }
-  }
+  },
+  "services": [
+    {
+      "id": "sluzba-prva",
+      "nazov": "Služba 1",
+      "popis": "Popis služby 1.",
+      "obrazok": "/images/services/sluzba-1.webp",
+      "obrazokCard": "A"
+    },
+    {
+      "id": "sluzba-druha",
+      "nazov": "Služba 2",
+      "popis": "Popis služby 2.",
+      "obrazok": "/images/services/sluzba-2.webp",
+      "obrazokCard": "B"
+    },
+    {
+      "id": "sluzba-tretia",
+      "nazov": "Služba 3",
+      "popis": "Popis služby 3.",
+      "obrazok": "/images/services/sluzba-3.webp",
+      "obrazokCard": "C"
+    },
+    {
+      "id": "sluzba-stvrta",
+      "nazov": "Služba 4",
+      "popis": "Popis služby 4.",
+      "obrazok": "/images/services/sluzba-4.webp",
+      "obrazokCard": "D"
+    }
+  ]
 }
