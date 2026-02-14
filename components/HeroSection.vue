@@ -1,6 +1,13 @@
-<script setup>
+<script>
 import siteContent from '~/content/site_content.json'
-const hero = siteContent.hero
+
+export default {
+    data() {
+        return {
+            hero: siteContent.hero
+        }
+    }
+}
 </script>
 
 <template>

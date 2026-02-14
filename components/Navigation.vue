@@ -1,6 +1,13 @@
-<script setup>
+<script>
 import siteContent from '~/content/site_content.json'
-const nav = siteContent.nav
+
+export default {
+    data() {
+        return {
+            nav: siteContent.nav
+        }
+    }
+}
 </script>
 
 <template>
