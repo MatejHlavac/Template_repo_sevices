@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "logoAlt": "Logo",
+    "links": [
+      { "label": "Domov", "href": "#hero" },
+      { "label": "Služby", "href": "#services" },
+      { "label": "Kontakt", "href": "#contact" }
+    ],
+    "cta": "Kontaktovať nás"
+  },
+  "hero": {
+    "imageAlt": "Ukážka profesionálnej práce",
+    "rating": {
+      "score": "5.0",
+      "count": "100+",
+      "label": "od",
+      "suffix": "spokojných zákazníkov"
+    },
+    "title": {
+      "line1": "Profesionálne služby,",
+      "line2": "na ktoré sa môžete spoľahnúť"
+    },
+    "features": ["Rýchlo", "Kvalitne", "Spoľahlivo"],
+    "buttons": {
+      "contact": "Kontaktovať nás",
+      "services": "Naše služby"
+    }
+  }
+}

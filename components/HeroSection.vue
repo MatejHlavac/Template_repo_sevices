@@ -1,9 +1,14 @@
+<script setup>
+import siteContent from '~/content/site_content.json'
+const hero = siteContent.hero
+</script>
+
 <template>
     <section id="hero">
         <div class="hero-image">
             <NuxtImg
                 src="/images/hero_image.webp"
-                alt="Ukážka profesionálnej práce"
+                :alt="hero.imageAlt"
                 width="2120"
                 height="1192"
                 loading="eager"
@@ -21,19 +26,17 @@
                         <span class="star">★</span>
                         <span class="star">★</span>
                     </div>
-                    <span class="rating-text"><strong>5.0</strong> od <strong>100+</strong> spokojných zákazníkov</span>
+                    <span class="rating-text"><strong>{{ hero.rating.score }}</strong> {{ hero.rating.label }} <strong>{{ hero.rating.count }}</strong> {{ hero.rating.suffix }}</span>
                 </div>
                 <h1>
-                    <span class="title-line underlined">Profesionálne služby,</span>
-                    <span class="title-line">na ktoré sa môžete spoľahnúť</span>
+                    <span class="title-line underlined">{{ hero.title.line1 }}</span>
+                    <span class="title-line">{{ hero.title.line2 }}</span>
                 </h1>
                 <ul>
-                    <li>Rýchlo</li>
-                    <li>Kvalitne</li>
-                    <li>Spoľahlivo</li>
+                    <li v-for="(item, i) in hero.features" :key="i">{{ item }}</li>
                 </ul>
-                <a class="kontakt" href="#contact">Kontaktovať nás</a>
-                <a class="služby" href="#services">Naše služby</a>
+                <a class="kontakt" href="#contact">{{ hero.buttons.contact }}</a>
+                <a class="služby" href="#services">{{ hero.buttons.services }}</a>
             </div>
         </div>
     </section>

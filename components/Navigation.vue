@@ -1,3 +1,8 @@
+<script setup>
+import siteContent from '~/content/site_content.json'
+const nav = siteContent.nav
+</script>
+
 <template>
     <nav class="navigation">
         <div class="container">
@@ -6,7 +11,7 @@
                     <a href="#hero">
                         <NuxtImg
                             src="/images/nav_logo.webp"
-                            alt="Logo"
+                            :alt="nav.logoAlt"
                             height="35"
                             loading="eager"
                             format="webp"
@@ -14,11 +19,11 @@
                     </a>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#hero">Domov</a></li>
-                    <li><a href="#services">Služby</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                    <li v-for="link in nav.links" :key="link.href">
+                        <a :href="link.href">{{ link.label }}</a>
+                    </li>
                 </ul>
-                <a href="#contact" class="nav-cta">Kontaktovať nás</a>
+                <a href="#contact" class="nav-cta">{{ nav.cta }}</a>
             </div>
         </div>
     </nav>
