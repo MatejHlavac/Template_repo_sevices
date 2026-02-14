@@ -35,13 +35,50 @@ export default {
         <p v-else>Ups, niečo sa pokazilo</p>
     </div>
     <div class="service-cards-container">
-        <div class="service-card">
-            <ServiceCard 
-                v-for="service in services"
-                :key="service.id"
+        <div class="service-card" v-for="service in services" :key="service.id">
+            <ServiceCard
+                :service="service"
                 @vybrata-sluzba="changeShowedService"
-                :service="service">
-            </ServiceCard>
+            />
         </div>
     </div>
 </template>
+
+<style scoped>
+.services-section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+}
+
+.service-content-container {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+}
+
+.service-detail h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.service-detail p {
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+.service-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.service-card {
+    flex: 1 1 120px;
+    min-width: 120px;
+}
+</style>
